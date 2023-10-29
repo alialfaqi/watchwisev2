@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .input {
+    @apply border border-gray-300 rounded-md px-3 w-full py-1;
+  }
+  .primaryBtn {
+    @apply bg-blue-500 text-white font-medium px-4 py-4 border-2 border-transparent transition-all  hover:border-2  hover:bg-transparent hover:text-blue-600  hover:border-blue-500;
+  }
+}
+
+@layer components {
+  .tab {
+    @apply justify-center items-center font-semibold hover:text-gray-600 text-gray-800 w-36 p-2;
+  }
+
+  .tab.active {
+    @apply font-semibold border-b-2;
+  }
+
+  .panel {
+    @apply hidden;
+  }
+  .panel.active {
+    @apply block;
+  }
+}
