@@ -1,5 +1,5 @@
 import "./App.css";
-import Navbar from "./components/Layout/Navbar";
+
 import Home from "./components/pages/Home";
 import { Route, Routes } from "react-router-dom";
 import ItemDetails from "./components/ItemDetails";
@@ -12,6 +12,7 @@ import { useState } from "react";
 import { useCookies } from "react-cookie";
 import { useEffect } from "react";
 import UserInfo from "./components/pages/UserInfo";
+import Navbar from "./components/layout/Navbar";
 
 function App() {
   const [cookies, setCookies] = useCookies(["UserToken", "User"]);
