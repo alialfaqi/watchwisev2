@@ -11,7 +11,7 @@ import { FaSignOutAlt } from "react-icons/fa";
 import { AiFillHome } from "react-icons/ai";
 import { PiShoppingBagFill } from "react-icons/pi";
 import { Link, useNavigate } from "react-router-dom";
-import Subnav from "./Subnav";
+import Subnav from "./SubNav";
 import Searchbar from "../Searchbar.jsx";
 import { useCookies } from "react-cookie";
 import { useState } from "react";
