@@ -41,7 +41,7 @@ const Searchbar = (props) => {
     >
       {(state) => (
         <div
-          className="absolute z-20 top-[58px] left-0 w-full"
+          className="fixed z-20 top-[58px] left-0 w-full"
           style={{
             transition: "all 0.3s ease-in-out",
             transform:

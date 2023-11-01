@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 
 const Slider = ({ trendingMovies }) => {
   return (
-    <div className="container mx-auto mt-24">
+    <div className="container mx-auto mb-5 ">
       <Swiper
         className="ads-slider w-full lg:w-[50%] "
         style={{
