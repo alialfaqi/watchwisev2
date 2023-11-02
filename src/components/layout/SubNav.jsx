@@ -86,7 +86,7 @@ const Subnav = () => {
 
   return (
     <>
-      <div className="fixed z-10">
+      <div className="fixed top-0 w-[10rem] z-10">
         <Transition
           in={menu.isSubVisible}
           timeout={300}
@@ -102,16 +102,16 @@ const Subnav = () => {
                     ? "translateX(0)"
                     : "translateX(-100%)",
               }}
-              className="py-3  bg-white w-[200px] md:w-[240px] h-[95vh] top-[58px]  absolute text-text1 z-[51] shadow-md"
+              className="py-3 bg-white w-[275px] h-[41rem] top-[58px] subnav-container  absolute text-text1 z-[51] shadow-md overflow-y-auto "
             >
               {/* ---------searchbar------  */}
-              <li className="relative  mb-5 flex">
+              <li className="  mb-5 flex">
                 <form action="" onSubmit={getSearchResult}>
                   <input
                     onChange={handleSearchInput}
                     ref={searchBar}
                     type="text"
-                    className="realtive mx-3 px-5 py-3 w-full text-text1 bg-primary border-2 border-transparent focus:border-text1 rounded-lg shadow-primary  outline-none "
+                    className="ms-4 px-5 py-3 w-full border-2 border-transparent  focus:border-slate-500  rounded-lg shadow-primary  outline-none "
                     placeholder="Search..."
                   />
                 </form>
@@ -139,7 +139,7 @@ const Subnav = () => {
               >
                 {(state) => (
                   <ul
-                    className="cursor-pointer mx-5  text-xs md:text-sm py-2 text-start flex flex-col justify-start  gap-1"
+                    className="cursor-pointer  mx-5  text-xs md:text-sm py-2 text-start flex flex-col  justify-start gap-1 "
                     style={{
                       transition: "all 0.3s ease-in-out",
                       transform:

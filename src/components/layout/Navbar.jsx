@@ -48,7 +48,7 @@ const Navbar = (props) => {
     <>
       <nav
         id="MainNav"
-        className="fixed border-b border-gray-300  top-0  bg-white  h-15 w-full z-50 lg:px-1 px-1  flex justify-between"
+        className="fixed border-b border-gray-300  top-0  bg-white  h-15 w-full z-20 lg:px-1 px-1  flex justify-between"
       >
         <ul className="flex">
           {/* subnav icon */}
@@ -75,15 +75,20 @@ const Navbar = (props) => {
           <li
             className={
               menu.isCategoryVisible
-                ? "relative hidden lg:flex items-center  px-5 py-3  text-text1 bg-primary cursor-pointer gap-2"
-                : "relative hidden lg:flex items-center  px-5 py-3  text-text1 hover:bg-primary cursor-pointer gap-2"
+                ? "relative  lg:flex items-center transition-all duration-[5000]  px-5 py-3   text-text1 bg-primary cursor-pointer gap-2"
+                : "relative  lg:flex items-center px-5 py-3  text-text1 hover:bg-primary cursor-pointer gap-2"
             }
             onClick={() => dispatch(menuActions.toggleCategories())}
+
+          // onMouseEnter={() => dispatch(menuActions.toggleCategories())}
+          // onMouseLeave={() => dispatch(menuActions.toggleCategories())}
+
           >
             <BsFillCollectionFill /> Movies
             {menu.isCatgMenuVisible && (
-              <div className="bottom-[-250%] right-[-250%] rounded-md  z-40 absolute mt-2 w-[500%] text-center  bg-white  shadow-lg">
-                <ul className="flex flex-wrap">
+              // <div className="bottom-[-250%] right-[-250%] rounded-md  z-40 absolute mt-2 w-[500%] text-center  bg-white  shadow-lg">
+              <div className="absolute top-[58.5px] left-0   rounded-t-none rounded-sm bg-slate-300 ">
+                <ul className="flex flex-col flex-wrap  ">
                   {movieGenres.map((genre) => {
                     return (
                       <li
@@ -92,7 +97,7 @@ const Navbar = (props) => {
                         //     `/services?category=${category.category_name}`
                         //   )
                         // }
-                        className="border border-gray-100 cursor-pointer text-sm hover:bg-primary rounded-md  px-5 py-6 w-[25%]"
+                        className="cursor-pointer text-sm hover:scale-[1.1] transition-all duration-75 rounded-md  px-2 py-1"
                         key={genre.id}
                       >
                         {genre}
@@ -170,9 +175,9 @@ const Navbar = (props) => {
       <Searchbar isSearchBarVisible={menu.isSearchBarVisible} />
       {/* close overlay  */}
       {menu.isNotiMenuVisible ||
-      menu.isUserMenuVisible ||
-      menu.isCatgMenuVisible ||
-      menu.isSearchBarVisible ? (
+        menu.isUserMenuVisible ||
+        menu.isCatgMenuVisible ||
+        menu.isSearchBarVisible ? (
         <div
           className=" fixed top-0 left-0 w-full h-screen z-10 bg-opacity-40"
           onClick={() => dispatch(menuActions.closeAllMenus())}

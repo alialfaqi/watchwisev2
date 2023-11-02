@@ -2,10 +2,11 @@
 import { Transition } from "react-transition-group";
 import { useSelector } from "react-redux";
 
+
 export function Backdrop(props) {
   return (
     <div
-      className="fixed top-0 left-0 w-full h-screen z-20 bg-black bg-opacity-40"
+      className="fixed inset-0 w-full h-screen z-30 bg-black bg-opacity-40"
       onClick={props.toggleModal}
     ></div>
   );
@@ -13,7 +14,7 @@ export function Backdrop(props) {
 
 function ModalOverlay(props) {
   return (
-    <div className="fixed z-[51] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  bg-white mx-1 py-5 rounded-lg shadow-md animate-slide-down max-w-[90%]">
+    <div className="fixed z-50 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  bg-white mx-1 py-5 rounded-lg shadow-md animate-slide-down max-w-[90%]">
       {props.children}
     </div>
   );

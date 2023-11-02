@@ -18,7 +18,7 @@ const ItemDetails = () => {
 
   return (
     <>
-      <div className="grid grid-cols-12 gap-3 ">
+      <div className="grid grid-cols-12 gap-3">
         <div className="col-span-12 md:col-span-4 order-2 md:order-1">
           <img
             src={"https://image.tmdb.org/t/p/w500" + itemDetails.poster_path}

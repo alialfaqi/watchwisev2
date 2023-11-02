@@ -43,7 +43,7 @@ function App() {
       {signModal.modalIsShown && signModal.loginModalStatus && <Login />}
       {signModal.modalIsShown && signModal.signUpModalStatus && <Signup />}
 
-      <div className="sticky block top-0 z-50 mb-[5rem]">
+      <div className=" block top-0  mb-[5rem]">
         <Navbar userStatus={userStatus} setUserStatus={setUserStatus} />
       </div>
 
