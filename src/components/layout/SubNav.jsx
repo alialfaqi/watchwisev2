@@ -126,13 +126,12 @@ const Subnav = () => {
               {/* ----------catgories-------- */}
               <li
                 className="hover:bg-primary cursor-pointer text-md md:text-lg py-3 pl-4 flex justify-start items-center gap-2"
-                onClick={() => dispatch(menuActions.toggleSubCategories())}
+                onClick={() => dispatch(menuActions.toggleMovSubCategories())}
               >
-                <BsFillCollectionFill /> Categories
+                <BsFillCollectionFill /> Movies
               </li>
-
               <Transition
-                in={menu.isCatgSubMenuVisible}
+                in={menu.isMovCatgSubMenuVisible}
                 timeout={300}
                 mountOnEnter
                 unmountOnExit
@@ -153,6 +152,44 @@ const Subnav = () => {
                     }}
                   >
                     {movieGenres.map((genre, index) => (
+                      <li
+                        key={index}
+                        className="font-[400] pb-2 hover:bg-primary flex items-center gap-2"
+                      >
+                        <MdDragIndicator /> <span> {genre} </span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </Transition>
+              <li
+                className="hover:bg-primary cursor-pointer text-md md:text-lg py-3 pl-4 flex justify-start items-center gap-2"
+                onClick={() => dispatch(menuActions.toggleTvSubCategories())}
+              >
+                <BsFillCollectionFill /> Tv
+              </li>
+              <Transition
+                in={menu.isTvCatgSubMenuVisible}
+                timeout={300}
+                mountOnEnter
+                unmountOnExit
+              >
+                {(state) => (
+                  <ul
+                    className="cursor-pointer  mx-5  text-xs md:text-sm py-2 text-start flex flex-col  justify-start gap-1 "
+                    style={{
+                      transition: "all 0.3s ease-in-out",
+                      transform:
+                        state === "entering" || state === "entered"
+                          ? "translateX(0)"
+                          : "translateX(-100%) ",
+                      opacity:
+                        state === "entering" || state === "entered"
+                          ? "opacity-1"
+                          : "opacity-0 ",
+                    }}
+                  >
+                    {tvGenres.map((genre, index) => (
                       <li
                         key={index}
                         className="font-[400] pb-2 hover:bg-primary flex items-center gap-2"
